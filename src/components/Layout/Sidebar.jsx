@@ -28,6 +28,13 @@ const Sidebar = ({ userRole, collapsed }) => {
       { label: "Administration", icon: <SettingOutlined />, path: "/administration" },
       { label: "Rapports", icon: <BarChartOutlined />, path: "/reports" },
     ],
+    chef_service: [
+      { label: "Dashboard", icon: <DashboardOutlined />, path: "/" },
+      { label: "Courriers Entrants", icon: <InboxOutlined />, path: "/courriers-entrants" },
+      { label: "Courriers Sortants", icon: <SendOutlined />, path: "/courriers-sortants" },
+      { label: "Workflow", icon: <SwapOutlined />, path: "/workflow" },
+      { label: "IA", icon: <RobotOutlined />, path: "/ia" },
+    ],
   };
 
   const items = (menuItems[userRole] || []).map((item, index) => ({
