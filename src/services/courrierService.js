@@ -6,6 +6,7 @@ export const getCourriers = async (params = {}) => {
   return res.data;
 };
 
+
 export const getCourrier = async (id) => {
   const res = await axios.get(`${BASE}courriers/${id}/`);
   return res.data;
