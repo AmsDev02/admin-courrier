@@ -12,6 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onFinish = async (values) => {
+    console.log("Données envoyées au serveur :", values);
     setLoading(true);
     try {
       const data = await login(values.email, values.password);

@@ -5,12 +5,13 @@ import Layout from "../components/Layout/Layout";
 
 import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
-import CourrierEntrants from "../pages/CourrierEntrants";
-import CourriersSortants from "../pages/CourriersSortants";
-import CourriersInternes from "../pages/CourriersInternes";
+import CourrierEntrants from "../pages/courriers/CourrierEntrants";
+import CourriersSortants from "../pages/courriers/CourriersSortants";
+import CourriersInternes from "../pages/courriers/CourriersInternes";
 import Workflow from "../pages/Workflow";
 import IA from "../pages/IA";
 import Archives from "../pages/Archives";
+import Services from "../pages/Services";
 import Administrations from "../pages/Administrations";
 import Reports from "../pages/Reports";
 
@@ -35,6 +36,7 @@ const AppRoutes = () => {
         <Route path="/archives" element={<Archives />} />
         <Route path="/administration" element={<Administrations />} />
         <Route path="/reports" element={<Reports />} />
+        <Route path="/services-admin" element={<Services />} />
       </Route>
     </Routes>
   );

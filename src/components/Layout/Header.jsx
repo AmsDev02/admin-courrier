@@ -29,9 +29,9 @@ const Header = ({ collapsed, setCollapsed, user }) => {
         }}
       />
 
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        <span style={{ fontWeight: 600 }}>{user?.prenom} {user?.nom}</span>
-        <Avatar src="/profile.png" />
+      <div style={{ display: "flex", alignItems: "center", gap: 100 }}>
+        <span style={{ fontWeight: "bold" }}>{user?.prenom} {user?.nom}</span>
+        <Avatar src="/../images.png" />
       </div>
     </AntHeader>
   );

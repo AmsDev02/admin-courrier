@@ -10,6 +10,7 @@ export const fetchCourriers = async () => {
   return response.data;
 };
 
+
 export const createCourrier = async (data) => {
   const response = await axios.post(API_URL, data, config);
   return response.data;

@@ -1,6 +1,7 @@
+
 import React, { useEffect, useState } from "react";
 import { Table, Button, Space, Modal, Form, Input, DatePicker, Select, Upload, message, Spin } from "antd";
-import { getCourriers, createCourrier, uploadPieceJointe } from "../services/courrierService";
+import { getCourriers, createCourrier, uploadPieceJointe } from "../../services/courrierService";
 import { UploadOutlined } from "@ant-design/icons";
 
 const { RangePicker } = DatePicker;

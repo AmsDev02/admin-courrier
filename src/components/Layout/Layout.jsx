@@ -12,7 +12,6 @@ const LayoutApp = () => {
 
   // Toggle sidebar
   const [collapsed, setCollapsed] = useState(false);
-
   return (
     <AntLayout style={{ minHeight: "100vh" }}>
       {/* Sidebar collapsable */}
