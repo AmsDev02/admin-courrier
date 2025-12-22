@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Table, message } from "antd";
-import { getCourriers } from "../services/courrierService";
-
+import { fetchCourriers } from "../services/courrierService";
 const CourriersInternes = () => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
     (async () => {
       try {
-        const data = await getCourriers({ type: "interne" });
+        const data = await fetchCourriers({ type: "interne" });
         setList(data);
       } catch {
         message.error("Erreur");

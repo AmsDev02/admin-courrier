@@ -1,7 +1,7 @@
 import axios from "axios";
 const BASE = "http://localhost:8000/api/courriers/"; // adapte
 
-export const getCourriers = async (params = {}) => {
+export const fetchCourriers = async (params = {}) => {
   const res = await axios.get(`${BASE}courriers/`, { params });
   return res.data;
 };

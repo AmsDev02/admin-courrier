@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Table, Button, Space, Modal, Form, Input, DatePicker, Select, Upload, message, Spin } from "antd";
-import { getCourriers, createCourrier, uploadPieceJointe } from "../../services/courrierService";
+import { fetchCourriers, createCourrier, uploadPieceJointe } from "../../services/courrierService";
 import { UploadOutlined } from "@ant-design/icons";
 
 const { RangePicker } = DatePicker;
@@ -15,7 +15,7 @@ const CourrierEntrants = () => {
   const fetch = async () => {
     setLoading(true);
     try {
-      const data = await getCourriers({ type: "entrant" });
+      const data = await fetchCourriers({ type: "entrant" });
       setList(data);
     } catch {
       message.error("Erreur lors du chargement");
