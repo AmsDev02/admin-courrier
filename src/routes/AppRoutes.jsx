@@ -1,3 +1,4 @@
+// src/routes/AppRoutes.jsx
 import React, { useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
@@ -14,10 +15,17 @@ import Archives from "../pages/Archives";
 import Services from "../pages/Services";
 import Administrations from "../pages/Administrations";
 import Reports from "../pages/Reports";
+import DashboardAdmin from "../pages/admin/DashboardAdmin"; // Nouvelle importation
+// import Profile from "../pages/Profile";
 
 const PrivateRoute = ({ children }) => {
   const { user } = useContext(AuthContext);
   return user ? children : <Navigate to="/login" replace />;
+};
+
+const AdminRoute = ({ children }) => {
+  const { user } = useContext(AuthContext);
+  return user && user.role === 'admin' ? children : <Navigate to="/" replace />;
 };
 
 const AppRoutes = () => {
@@ -25,7 +33,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/login" element={<Login />} />
 
-      {/* zone protégée */}
+      {/* Zone protégée */}
       <Route element={<PrivateRoute><Layout /></PrivateRoute>}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/courriers-entrants" element={<CourrierEntrants />} />
@@ -37,6 +45,17 @@ const AppRoutes = () => {
         <Route path="/administration" element={<Administrations />} />
         <Route path="/reports" element={<Reports />} />
         <Route path="/services-admin" element={<Services />} />
+        {/* <Route path="/mon-profil" element={<Profile />} /> */}
+        
+        {/* Route spécifique admin */}
+        <Route 
+          path="/admin-dashboard" 
+          element={
+            <AdminRoute>
+              <DashboardAdmin />
+            </AdminRoute>
+          } 
+        />
       </Route>
     </Routes>
   );
